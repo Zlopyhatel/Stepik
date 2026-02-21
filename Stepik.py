@@ -18,4 +18,3 @@ str3 = input()
 print(str3)
 print(str2)
 print(str1)
-
