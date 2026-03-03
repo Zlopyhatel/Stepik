@@ -90,4 +90,85 @@ print(k % n)
 
 x = int(input())
 print(-(-x // 2))
+
+#Stepik samples
+num = int(input())
+last_digit = num % 10
+first_digit = num // 10
+print('Число десятков =', first_digit)
+print('Число единиц =', last_digit)
+
+num = int(input())
+last_digit = num % 10
+first_digit = num // 10
+print('Сумма цифр =', last_digit + first_digit)
+
+num = int(input())
+digit3 = num % 10
+digit2 = (num // 10) % 10
+digit1 = num // 100
+print(digit1, digit2, digit3, sep=',')
+#end of Stepik samples
+
+#https://stepik.org/lesson/284816/step/21?unit=266160
+num = int(input().strip())
+digit3 = num % 10
+digit2 = (num // 10) % 10
+digit1 = num // 100
+print('Сумма цифр =', digit1 + digit2 + digit3)
+print('Произведение цифр =', digit1 * digit2 * digit3)
+
+
+#https://stepik.org/lesson/284816/step/22?unit=266160
+num = int(input().strip())
+digit3 = num % 10
+digit2 = (num // 10) % 10
+digit1 = num // 100
+print(digit1, digit2, digit3, sep='')
+print(digit1, digit3, digit2, sep='')
+print(digit2, digit1, digit3, sep='')
+print(digit2, digit3, digit1, sep='')
+print(digit3, digit1, digit2, sep='')
+print(digit3, digit2, digit1, sep='')
+
+#https://stepik.org/lesson/284816/step/23?unit=266160
+num = int(input().strip())
+digit4 = num % 10
+digit3 = (num // 10) % 10
+digit2 = (num // 100) % 10
+digit1 = num // 1000
+print('Цифра в позиции тысяч равна',digit1)
+print('Цифра в позиции сотен равна', digit2)
+print('Цифра в позиции десятков равна', digit3)
+print('Цифра в позиции единиц равна', digit4)
+
+
+i = 54321
+print(i // 10000)
+
+#exam
+print("раз", "два, "три")
+print("Told you not to worry", "But maybe that's a lie", sep=' :) ')
+print("Honey, what's your hurry", end='?')
+
+print('*****************',sep='')
+print('*               *',sep='')
+print('*               *',sep='')
+print('*****************',sep='')
+
+a = int(input())
+b = int(input())
+print('Квадрат суммы', a, 'и', b, 'равен', (a+b)**2)
+print('Сумма квадратов', a, 'и', b, 'равна', a**2 + b**2)
+
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+print(a**b + c**d)
+
+n = int(input())
+print(n + int(str(n)+str(n)) + int(str(n)+str(n)+str(n)))
+n = input()
+print(int(n)+int(n+n)+int(n+n+n))
 """""
