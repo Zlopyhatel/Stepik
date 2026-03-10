@@ -501,7 +501,7 @@ elif c == '/':
         print(a / b)
 else:
     print('Неверная операция')
-"""""
+
 #https://stepik.org/lesson/265082/step/20?unit=246030
 #Красный, синий и желтый называются основными цветами, потому что их нельзя получить путем смешения других цветов.
 # При смешивании двух основных цветов получается вторичный цвет:
@@ -527,3 +527,185 @@ else:
         print(a)
 
 
+#09/03/2026
+#https://stepik.org/lesson/265082/step/21?unit=246030
+#Напишите программу, которая считывает номер кармана и показывает, является ли этот карман зеленым, красным или черным.
+# Программа должна вывести сообщение об ошибке, если пользователь вводит число, которое лежит вне диапазона от 0 до 36.
+x = int(input())
+if x == 0:
+    print('зеленый')
+elif 1 <= x <= 36:
+    if x % 2 != 0:
+        if 1 <= x <= 10 or  19 <= x <= 28:
+            print('красный')
+        else:
+            print('черный')
+    else:
+        if 1 <= x <= 10 or  19 <= x <= 28:
+            print('черный')
+        else:
+            print('красный')
+else:
+    print('ошибка ввода')
+
+#https://stepik.org/lesson/265082/step/22?unit=246030
+#На числовой прямой даны два отрезка. Напишите программу, которая находит их пересечение.
+a1, b1, a2, b2 = int(input()), int(input()), int(input()), int(input())
+
+left = a1 if a1 > a2 else a2      # max(a1, a2) без функции
+right = b1 if b1 < b2 else b2     # min(b1, b2) без функции
+
+if left < right:
+    print(left, right)
+elif left == right:
+    print(left)
+else:
+    print('пустое множество')
+
+#exam
+#1
+x = int(input())
+d = x % 10
+c = (x // 10) % 10
+if c == d == 0:
+    print('YES')
+else:
+    print('NO')
+#https://stepik.org/lesson/292172/step/2?unit=273659
+
+x1,y1,x2,y2 = int(input()),int(input()),int(input()),int(input())
+if (x1 + y1 + x2 + y2) % 2 == 0:
+    print('YES')
+else:
+    print('NO')
+
+
+#https://stepik.org/lesson/292172/step/3?unit=273659
+age = int(input())
+male = input()
+if 10 <= age <= 15 and male == 'f':
+    print('YES')
+else:
+    print('NO')
+
+#https://stepik.org/lesson/292172/step/4?unit=273659
+x = int(input())
+if 1 <= x <= 10:
+    if x == 1:
+        print('I')
+    elif x == 2:
+        print('II')
+    elif x == 3:
+        print('III')
+    elif x == 4:
+        print('IV')
+    elif x == 5:
+        print('V')
+    elif x == 6:
+        print('VI')
+    elif x == 7:
+        print('VII')
+    elif x == 8:
+        print('VIII')
+    elif x == 9:
+        print('IX')
+    elif x == 10:
+        print('X')
+else:
+    print('ошибка')
+
+#https://stepik.org/lesson/292172/step/5?unit=273659
+x = int(input())
+if x % 2 != 0:
+    print('YES')
+elif 2 <= x <= 5 and x % 2 == 0:
+    print('NO')
+elif 6 <= x <= 20 and x % 2 == 0:
+    print('YES')
+elif x > 20 and x % 2 == 0:
+    print('NO')
+
+#https://stepik.org/lesson/292172/step/6?unit=273659
+x1,y1,x2,y2 = int(input()),int(input()),int(input()),int(input())
+if abs(x1 - x2) == abs(y1 - y2):
+    print('YES')
+else:
+    print('NO')
+
+#https://stepik.org/lesson/292172/step/7?unit=273659
+x1,y1,x2,y2 = int(input()),int(input()),int(input()),int(input())
+
+dx = abs(x1 - x2)
+dy = abs(y1 - y2)
+
+if (dx == 2 and dy == 1) or (dx == 1 and dy == 2):
+    print('YES')
+else:
+    print('NO')
+
+#https://stepik.org/lesson/292172/step/8?unit=273659
+x1,y1,x2,y2 = int(input()),int(input()),int(input()),int(input())
+if x1 == x2 or y1 == y2 or abs(x1 - x2) == abs(y1 - y2):
+    print('YES')
+else:
+    print('NO')
+
+#https://stepik.org/lesson/265105/step/15?unit=246053
+a, b = float(input()), float(input())
+print(a * b * 0.5)
+
+#https://stepik.org/lesson/265105/step/16?unit=246053
+s, v1, v2 = float(input()), float(input()), float(input())
+print(s / (v1 + v2))
+
+#https://stepik.org/lesson/265105/step/17?unit=246053
+# Напишите программу, которая считывает с клавиатуры одно число и выводит обратное ему.
+# Если при этом введённое с клавиатуры число – ноль, то вывести «Обратного числа не существует» (без кавычек).
+x = float(input())
+if x != 0:
+    print(x ** -1)
+else:
+    print('Обратного числа не существует')
+
+#https://stepik.org/lesson/265105/step/18?unit=246053
+#Напишите программу, которая определяет,
+# какой температуре по шкале Цельсия соответствует указанное значение по шкале Фаренгейта.
+x = float(input())
+print(5 / 9 * (x - 32))
+
+#https://stepik.org/lesson/265105/step/19?unit=246053
+#На вход программе подаётся число n – количество собачьих лет.
+# Напишите программу, которая вычисляет возраст собаки в человеческих годах по следующему алгоритму:
+# в течение первых двух лет собачий год равен 10.5 человеческим годам,
+# после этого каждый год собаки равен 4 человеческим годам.
+x = float(input())
+if x <= 2:
+    age = x * 10.5
+else:
+    age = 21 + (x-2) * 4
+print(age)
+
+age = x * 10.5 if x <= 2 else 21 + (x-2) * 4
+print(age)
+
+#https://stepik.org/lesson/265105/step/20?unit=246053
+#Дано положительное действительное число. Выведите его первую цифру после десятичной точки.
+x = float(input())
+print(int(x * 10 % 10))
+
+#https://stepik.org/lesson/265105/step/21?unit=246053
+#Дано положительное действительное число. Выведите его дробную часть.
+x = float(input())
+print(x - int(x))
+
+#https://stepik.org/lesson/265105/step/27?unit=246053
+#Напишите программу, которая находит наименьшее и наибольшее из пяти чисел и выводит текст в следующем формате:
+x1, x2, x3, x4, x5 = int(input()), int(input()), int(input()), int(input()), int(input())
+print('Наименьшее число =', min(x1, x2, x3, x4, x5))
+print('Наибольшее число =', max(x1, x2, x3, x4, x5))
+
+#https://stepik.org/lesson/265105/step/28?unit=246053
+#Даны пять чисел. Напишите программу, которая вычисляет сумму их модулей
+x1, x2, x3, x4, x5 = float(input()), float(input()), float(input()), float(input()), float(input())
+print(abs(x1) + abs(x2) + abs(x3) + abs(x4) + abs(x5))
+"""""
