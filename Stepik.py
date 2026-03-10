@@ -708,4 +708,82 @@ print('Наибольшее число =', max(x1, x2, x3, x4, x5))
 #Даны пять чисел. Напишите программу, которая вычисляет сумму их модулей
 x1, x2, x3, x4, x5 = float(input()), float(input()), float(input()), float(input()), float(input())
 print(abs(x1) + abs(x2) + abs(x3) + abs(x4) + abs(x5))
+
+#10/03/2026
+#https://stepik.org/lesson/265105/step/29?unit=246053
+# Назовём число интересным, если в нём разность максимальной и минимальной цифры равняется средней по величине цифре.
+# Напишите программу, которая определяет, интересное число или нет.
+# Если число интересное, следует вывести текст «Число интересное» (без кавычек),
+# иначе – «Число неинтересное» (без кавычек).
+x = int(input())
+c = x % 10
+b = x //10 % 10
+a = x // 100
+avg = a + b + c - max(a, b, c) - min(a, b, c)
+if max(a, b, c) - min(a, b, c) == avg:
+    print('Число интересное')
+else:
+    print('Число неинтересное')
+
+# https://stepik.org/lesson/265105/step/30?unit=246053
+# Напишите программу, которая упорядочивает три числа от большего к меньшему.
+a,b,c = int(input()), int(input()), int(input())
+print(max(a, b, c))
+print((a + b + c) - max(a, b, c) - min(a, b, c))
+print(min(a, b, c))
+
+#https://stepik.org/lesson/265105/step/31?unit=246053
+# Прогуливаясь по Манхэттену, вы не можете попасть из точки А в точку Б по кратчайшему пути.
+# Если только вы не умеете проходить сквозь стены,
+# вам обязательно придется идти вдоль его параллельно-перпендикулярных улиц.
+# Напишите программу, определяющую манхэттенское расстояние между двумя точками, координаты которых заданы.
+p1, p2, q1, q2 = int(input()), int(input()), int(input()), int(input())
+print(abs(p1 - q1) + abs(p2 - q2))
+
+#https://stepik.org/lesson/265115/step/12?unit=246063
+# Напишите программу, которая выводит текст
+print('"Python is a great language!",' + ' said Fred.' + ' "I' + " don't" + ' ever remember having this much fun before."')
+
+#https://stepik.org/lesson/265115/step/13?unit=246063
+# Напишите программу, которая считывает с клавиатуры две строки – имя и фамилию пользователя – и выводит фразу
+name, lname = input(), input()
+print('Hello ' + name + ' ' + lname + '! You have just delved into Python')
+
+#https://stepik.org/lesson/265115/step/14?unit=246063
+# Напишите программу, которая считывает с клавиатуры название футбольной команды
+# и выводит информацию о ней в следующем формате
+name = input()
+print('Футбольная команда ' + name + ' имеет длину ' + str(len(name)) + ' символов')
+
+#https://stepik.org/lesson/265115/step/15?unit=246063
+# Даны названия трёх городов. Напишите программу, которая определяет самое короткое и самое длинное название города.
+city1, city2, city3 = input(), input(), input()
+cityl1, cityl2, cityl3 = len(city1), len(city2), len(city3)
+if min(cityl1, cityl2, cityl3) == cityl1:
+    print(city1)
+elif min(cityl1, cityl2, cityl3) == cityl2:
+    print(city2)
+else:
+    print(city3)
+
+if max(cityl1, cityl2, cityl3) == cityl1:
+    print(city1)
+elif max(cityl1, cityl2, cityl3) == cityl2:
+    print(city2)
+else:
+    print(city3)
+
+#https://stepik.org/lesson/265115/step/16?unit=246063
+# Вводятся 3 строки в случайном порядке.
+# Напишите программу, которая выясняет, можно ли из длин этих строк построить арифметическую прогрессию.
+a, b, c = input(), input(), input()
+la, lb, lc = len(a), len(b), len(c)
+a1, a3 = min(la, lb, lc), max(la, lb, lc)
+a2 = la + lb + lc - a1 - a3
+if a2 - a1 == a3 - a2:
+    print('YES')
+else:
+    print('NO')
+print(a1,a2,a3)
+
 """""
