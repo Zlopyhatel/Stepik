@@ -786,4 +786,143 @@ else:
     print('NO')
 print(a1,a2,a3)
 
+#11/03/2026
+# https://stepik.org/lesson/265115/step/21?unit=246063
+# Напишите программу, которая считывает одну строку, после чего выводит «YES» (без кавычек),
+# если во введённой строке есть подстрока «синий», или «NO» (без кавычек) в противном случае.
+if 'синий' in input():
+    print('YES')
+else:
+    print('NO')
+
+#https://stepik.org/lesson/265115/step/22?unit=246063
+# Напишите программу, которая считывает одну строку, после чего выводит «YES» (без кавычек),
+# если во введённой строке есть подстрока «суббота» или «воскресенье», или «NO» (без кавычек) в противном случае.
+text = input()
+print('YES' if 'суббота' in text or 'воскресенье' in text else 'NO')
+
+#https://stepik.org/lesson/265115/step/23?unit=246063
+# Будем считать email адрес корректным, если в нём есть символы собачки (@) и точки (.).
+# Напишите программу, проверяющую корректность email адреса.
+text = input()
+print('YES' if '@' in text and '.' in text else 'NO')
+
+import math
+
+num1 = math.sqrt(2)     # вычисление квадратного корня из двух
+num2 = math.ceil(3.8)   # округление числа вверх
+num3 = math.floor(3.8)  # округление числа вниз
+
+print(num1)
+print(num2)
+print(num3)
+
+#https://stepik.org/lesson/265110/step/4?unit=246058
+# Напишите программу, определяющую площадь круга и длину окружности по заданному радиусу R
+import math
+R = float(input())
+print(math.pi * pow(R, 2))
+print(2 * math.pi * R)
+
+#https://stepik.org/lesson/265110/step/5?unit=246058
+# Напишите программу, которая принимает на вход действительное число x и вычисляет по нему значение
+import math
+x = float(input())
+print(math.floor(x) + math.ceil(x))
+
+#https://stepik.org/lesson/265110/step/6?unit=246058
+# На плоскости евклидово расстояние ρ между двумя точками
+import math
+x1, y1, x2, y2 = float(input()), float(input()), float(input()), float(input())
+print(math.sqrt(math.pow((x1 - x2),2) + math.pow((y1 - y2),2)))
+
+#https://stepik.org/lesson/265110/step/7?unit=246058
+# Напишите программу, вычисляющую значение тригонометрического выражения по заданному числу градусов x
+import math
+x = float(input())
+res = math.sin(math.radians(x)) + math.cos(math.radians(x)) + pow(math.tan(math.radians(x)),2)
+print(res)
+
+#https://stepik.org/lesson/265110/step/8?unit=246058
+# Правильный многоугольник — выпуклый многоугольник, у которого равны все стороны и все углы между смежными сторонами.
+# Даны два числа: натуральное число n и действительное число a.
+# Напишите программу, которая находит площадь указанного правильного многоугольника
+import math
+n, a = int(input()), float(input())
+print(n * pow(a, 2) / (4 * math.tan(math.pi / n)))
+
+#https://stepik.org/lesson/265110/step/9?unit=246058
+# На вход программе подаются два положительных действительных числа a и b каждое на отдельной строке.
+# Программа должна вывести 4 числа (каждое на отдельной строке) – среднее арифметическое,
+# геометрическое, гармоническое и квадратичное.
+import math
+a, b = float(input()), float(input())
+print((a + b) / 2)
+print(math.sqrt(a * b))
+print(2 * a * b / (a + b))
+print(math.sqrt((math.pow(a,2) + math.pow(b,2))/2))
+
+#https://stepik.org/lesson/265110/step/10?unit=246058
+# Даны три действительных числа a, b, c. Напишите программу, которая находит действительные корни квадратного уравнения
+import math
+a, b, c = float(input()), float(input()), float(input())
+D = pow(b, 2) - 4 * a * c
+if D < 0:
+    print('Нет корней')
+elif D == 0:
+    print(-b/(2*a))
+elif D > 0:
+    x = ((-b - math.sqrt(D)) / (2*a))
+    y = ((-b + math.sqrt(D)) / (2*a))
+    print(min(x,y))
+    print(max(x,y))
+
+#https://stepik.org/lesson/265118/step/7?unit=246067
+#Напишите программу, которая выводит текст «Python is awesome!» (без кавычек) 10 раз
+for i in range(10):
+    print('Python is awesome!')
+
+#https://stepik.org/lesson/265118/step/8?unit=246067
+# Напишите программу, которая использует ровно три цикла for для печати следующей последовательности символов:
+for i in range(6):
+    print('AAA')
+for i in range(5):
+    print('BBBB')
+print('E')
+for i in range(9):
+    print('TTTTT')
+print('G')
+
+#https://stepik.org/lesson/265118/step/9?unit=246067
+# Дано предложение и количество раз, сколько его надо повторить.
+# Напишите программу, которая повторяет данное предложение нужное количество раз.
+text = input()
+count = int(input())
+for i in range(count):
+    print(text)
+
+#https://stepik.org/lesson/265118/step/10?unit=246067
+# На вход программе подаётся натуральное число n
+# Напишите программу, которая печатает звёздный прямоугольник размерами
+n = int(input())
+for i in range(n):
+    print('*******************')
+
+for i in range(27):
+    j = i + 1
+    print('i-',i)
+print('j-',j)
+
+total = 0
+for i in range(3):
+    total = total - i
+    print(total)
+
+total = 0
+for i in range(10):
+    total = total + i
+    print(total)
+    if i == 9:
+        total = 1
+print(total)
 """""
