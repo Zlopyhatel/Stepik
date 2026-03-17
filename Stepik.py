@@ -968,4 +968,72 @@ for i in range(100, 1000):  # перебираем числа от 100 до 999
 Напишем программу, которая выводит все четные числа из промежутка [56;170].
 for i in range(56, 171, 2):
     print(i)
+
+#13/03/2026
+for i in range(10, 0, -2):
+    print(i)
+
+for i in range(1, 10, 3):
+    print(i, sep='?')
+
+for i in range(2, 6, 2):
+    print(i, end=',')
+
+#https://stepik.org/lesson/265120/step/14?unit=246069
+#Даны два целых числа m и n (m≤n). Напишите программу, которая выводит все целые числа от m до n включительно
+m, n = int(input()), int(input())
+if m <= n:
+    for i in range(m, n + 1):
+        print(i)
+if n < m:
+    for i in range(n, m + 1):
+        print(i)
+
+#https://stepik.org/lesson/265120/step/15?unit=246069
+#Дано натуральное число n. Напишите программу, которая выводит таблицу умножения на n (от 1 до 10 включительно).
+n = int(input())
+for i in range(1,11):
+    print(n, 'x', i, '=', n * i )
+
+#https://stepik.org/lesson/265120/step/16?unit=246069
+m, n = int(input()), int(input())
+if m <= n:
+    for i in range(m, n + 1):
+        if i % 17 == 0 or i % 10 == 9 or (i % 3 == 0 and i % 5 == 0):
+            print(i)
+
+#https://stepik.org/lesson/265120/step/17?unit=246069
+# Даны два целых числа m и n (m > n).
+# Напишите программу, которая выводит все нечётные целые числа от m до n (включительно) в порядке убывания.
+m, n = int(input()), int(input())
+if m > n:
+    for i in range(m, n - 1, -1):
+        if i % 2 != 0:
+            print(i)
+
+m, n = int(input()), int(input())
+start = m + (m % 2 - 1)  # делаем m нечётным
+for i in range(start, n - 1, -2):
+    print(i)
+
+#https://stepik.org/lesson/265120/step/18?unit=246069
+# Даны два целых числа m и n.
+# Напишите программу, которая выводит все целые числа от m до n включительно в порядке возрастания,
+# если m < n, или в порядке убывания в противном случае.
+m, n = int(input()), int(input())
+if m > n:
+    for i in range(m, n - 1, -1):
+            print(i)
+elif m < n:
+    for i in range(m, n + 1,):
+        print(i)
+else:
+    print(m)
 """""
+counter = 0                                             # создаём переменную счётчика
+for _ in range(10):
+    num = int(input())
+    if num > 10:                                        # при выполнении условия
+        counter = counter + 1                           # увеличиваем значение cчётчика
+
+print('Было введено', counter, 'чисел, больших 10.')
