@@ -1074,7 +1074,7 @@ print(total_len)
 #Кассиопея
 #Каллисто
 
-"""""
+
 total = 0
 for i in range(1, 6):
     total += i
@@ -1087,3 +1087,146 @@ for _ in range(5):
         flag = True
 print(flag)
 
+
+#19/03/2026
+#https://stepik.org/lesson/294243/step/1?unit=275922
+#На вход программе подаются два целых числа.
+# Напишите программу, которая подсчитывает количество чисел в диапазоне от a до b (включительно),
+# куб которых оканчивается на 4 или 9.
+a, b = int(input()), int(input())
+count = 0
+for i in range(a, b + 1):
+    if pow(i,3) % 10 == 4 or pow(i,3) % 10 == 9:
+        count += 1
+print(count)
+
+#https://stepik.org/lesson/294243/step/2?unit=275922
+#На вход программе подаются натуральное число n, а затем n целых чисел, каждое на отдельной строке.
+# Напишите программу, которая подсчитывает сумму введённых чисел (не включая само число n).
+n = int(input())
+res = 0
+for _ in range(n):
+    number = int(input())
+    res += number
+print(res)
+
+#https://stepik.org/lesson/294243/step/3?unit=275922
+#На вход программе подаётся натуральное число n. Напишите программу, которая вычисляет значение выражения
+import math
+n = int(input())
+res1 = 0
+res = 0
+for i in range(1, n + 1):
+    res1 += (1/i)
+res = res1 - math.log(n)
+print(res)
+
+#https://stepik.org/lesson/294243/step/4?unit=275922
+#На вход программе подаётся натуральное число n.
+# Напишите программу, которая подсчитывает сумму тех чисел от 1 до n (включительно),
+# квадрат которых оканчивается на 2, на 5 или на 8.
+n = int(input())
+res = 0
+for i in range(1, n + 1):
+    if pow(i,2) % 10 == 2 or pow(i,2) % 10 == 5 or pow(i,2) % 10 == 8:
+        res += i
+if res == 0:
+    print('0')
+else:
+    print(res)
+
+#https://stepik.org/lesson/294243/step/5?unit=275922
+#На вход программе подаётся натуральное число n.
+# Напишите программу, которая вычисляет n!
+import math
+print(math.factorial(int(input())))
+
+#https://stepik.org/lesson/294243/step/6?unit=275922
+#Напишите программу, которая считывает 10 чисел и выводит произведение отличных от нуля чисел.
+res = 1
+for _ in range(10):
+    n = int(input())
+    if n != 0:
+        res *= n
+print(res)
+
+#https://stepik.org/lesson/294243/step/7?unit=275922
+#На вход программе подаётся натуральное число n.
+# Напишите программу, которая вычисляет сумму всех его делителей.
+n = int(input())
+res = 0
+for i in range(1, n + 1):
+    if n % i == 0:
+        res += i
+print(res)
+
+#https://stepik.org/lesson/294243/step/8?unit=275922
+#Напишите программу, которая считывает последовательность из 10 целых чисел и определяет,
+# является ли каждое из них чётным или нет.
+res1 = 0
+res2 = 0
+for _ in range(10):
+    n = int(input())
+    res1 += n
+    if n % 2 == 0:
+        res2 += n
+if res1 == res2:
+    print('YES')
+if res1 != res2:
+    print('NO')
+#example
+f = 'YES'
+for _ in range(10):
+    if int(input())%2:
+        f = 'NO'
+print(f)
+
+#https://stepik.org/lesson/294243/step/9?unit=275922
+#На вход программе подаётся натуральное число n. Напишите программу вычисления знакочередующейся суммы
+n = int(input())
+res = 0
+for i in range(1,n + 1):
+    if i % 2 != 0:
+        res += i
+    else:
+        res -= i
+print(res)
+
+#https://stepik.org/lesson/294243/step/10?unit=275922
+#На вход программе подаются натуральное число n (n ≥ 2), а затем n различных натуральных чисел последовательности,
+# каждое на отдельной строке.
+# Напишите программу, которая выводит наибольшее и второе наибольшее число последовательности.
+n = int(input())
+max1 = 0
+max2 = 0
+
+for _ in range(n):
+    m = int(input())
+    if m > max1:
+        max2 = max1  # сохраняем предыдущий max1
+        max1 = m
+    elif m > max2:
+        max2 = m
+print(max1)
+print(max2)
+
+#https://stepik.org/lesson/294243/step/11?unit=275922
+#Напишите программу, которая считывает натуральное число n и выводит первые n чисел последовательности Фибоначчи.
+#AI
+n = int(input())
+a, b = 1, 1
+result = []
+for _ in range(n):
+    result.append(a)
+    a, b = b, a + b
+print(' '.join(map(str, result)))
+
+#Stepik
+n = int(input())
+a, b = 1, 1
+for i in range(n):
+    print(a, end=' ')
+    a, b = b, a + b
+"""""
+
+#20/03/2026
