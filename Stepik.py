@@ -1227,6 +1227,69 @@ a, b = 1, 1
 for i in range(n):
     print(a, end=' ')
     a, b = b, a + b
-"""""
+
 
 #20/03/2026
+text = input()
+total = 0
+while text != 'stop':
+    total += int(text)
+    text = input()
+print('Сумма чисел равна', total)
+
+num = int(input())
+total = 0
+while abs(num) <= 5:
+    total += num
+    num = int(input())
+print(total)
+
+num = int(input())
+total = 0
+while abs(num) <= 5:
+    total += num
+    num = int(input())
+print(total)
+
+count = 1
+while count < 10:
+    print('Python awesome!')
+
+num = int(input())
+counter = 0
+while '0' not in str(num):
+    counter += 1
+    print(counter)
+    num = int(input())
+    print(num)
+print(counter)
+
+num = int(input())
+counter = 0
+while '0' not in str(num):
+    counter += 1
+print(counter)
+
+num = int(input())
+total = 0
+while num > -4:
+    num = int(input())
+    total += num
+    print(total)
+print(total)
+
+i = 7
+a = 5
+while i < 11:
+    a += i
+    i += 2
+print(a)
+
+total = 1
+while total < 10:
+    num = int(input())
+    total *= num
+    print(total)
+"""""
+
+#23/03/2026
