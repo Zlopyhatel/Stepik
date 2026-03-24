@@ -1617,7 +1617,7 @@ for digit in num:
         break
 else:  # ← выполнится, если цикл не прервался через break
     print('YES')
-"""""
+
 #https://stepik.org/lesson/265122/step/18?unit=246071
 #Дано натуральное число.
 # Напишите программу, которая определяет, является ли последовательность
@@ -1634,5 +1634,21 @@ while num > 0:
     num //= 10
 else:
     print('YES')
+"""""
+#https://stepik.org/lesson/265122/step/19?unit=246071
+#На вход программе подаётся натуральное число n.
+# Напишите программу, которая выводит для каждой четной
+# цифры данного числа текст в следующем формате:
+num = int(input())
+count = 1
+for digit in str(num):
+    if int(digit) % 2 == 0:
+        print(count,'-я четная цифра равна ',digit, sep='')
+        count += 1
+        num //= 10
+if count == 1:
+    print('Четных цифр в числе нет')
+
+#https://stepik.org/lesson/265122/step/20?unit=246071 Глоссарий
 
 
