@@ -1471,8 +1471,168 @@ for total_minutes in range(start, end + 1):
     minutes = total_minutes % 60
     # Выводим в формате hh:mm с ведущими нулями
     print(f"{hours:02d}:{minutes:02d}")    
-"""""
+
 #(num // 10 ** (n - i)) % 10
 #где n – количество разрядов числа, i – номер цифры числа (слева направо, начиная с 1).
 
 #24/03/2026
+
+num = 1576
+has_seven = False                                 # сигнальная метка (флаг)
+while num != 0:
+    last_digit = num % 10
+    if last_digit == 7:
+        has_seven = True
+    num = num // 10
+if has_seven == True:
+    print('YES')
+else:
+    print('NO')
+
+num = int(input())                                # считываем число
+n = len(str(num))                                 # количество разрядов числа
+for i in range(1, n + 1):                         # проходим по всем разрядам числа от 1 до n
+    digit = num // 10 ** (n - i) % 10
+    print(i,digit)
+
+num = 813
+while num > 0:
+    last_digit = num % 10
+    num //= 10
+    print(last_digit, sep='=', end='')
+
+num = 725
+while num != 0:
+    last_digit = num % 10
+    num //= 10
+    print(last_digit, sep='', end='$')
+
+num = 586
+while num > 0:
+    last_digit = num % 10
+    print(last_digit, sep='*', end='#')
+    num //= 10
+    print()
+
+#https://stepik.org/lesson/265122/step/12?unit=246071
+#Дано натуральное число.
+# Напишите программу, которая выводит его цифры в столбик в обратном порядке
+num = int(input())
+while num > 0:
+    last_digit = num % 10
+    print(last_digit)
+    num //= 10
+
+#https://stepik.org/lesson/265122/step/13?unit=246071
+#Дано натуральное число.
+# Напишите программу, которая меняет порядок цифр числа на обратный.
+num = int(input())
+while num > 0:
+    last_digit = num % 10
+    print(last_digit,end='')
+    num //= 10
+
+#https://stepik.org/lesson/265122/step/14?unit=246071
+#Дано натуральное число n(n≥10).
+# Напишите программу, которая определяет его максимальную и минимальную цифры и выводит текст в следующем формате:
+num = int(input())
+max_digit = 0
+min_digit = num % 10
+while num > 0:
+    current_digit = num % 10
+    if current_digit > max_digit:
+        max_digit = current_digit
+    if current_digit < min_digit:
+        min_digit = current_digit
+    num //= 10
+print('Максимальная цифра равна', max_digit)
+print('Минимальная цифра равна', min_digit)
+
+#https://stepik.org/lesson/265122/step/15?unit=246071
+#Дано натуральное число. Напишите программу, которая вычисляет:
+#сумму его цифр;
+#количество цифр в нем;
+#произведение его цифр;
+#среднее арифметическое его цифр;
+#его первую цифру;
+#сумму его первой и последней цифры.
+num = int(input())
+sum_digit = 0
+length_digit = len(str(num))
+first_digit = (num // 10 ** (length_digit-1) % 10)
+sum_extreme = first_digit + (num % 10)
+mul_digit = 1
+while num > 0:
+    current_digit = num % 10
+    sum_digit = current_digit + sum_digit
+    mul_digit = current_digit * mul_digit
+    num //= 10
+print(sum_digit)
+print(length_digit)
+print(mul_digit)
+print(sum_digit/length_digit)
+print(first_digit)
+print(sum_extreme)
+
+#https://stepik.org/lesson/265122/step/16?unit=246071
+#Дано натуральное число n(n>9).
+# Напишите программу, которая определяет его вторую (с начала) цифру.
+num = input()
+print(num[1])
+
+num = int(input())
+length_num = len(str(num))
+digit = num // 10 ** (length_num - 2) % 10
+print(digit)
+
+#https://stepik.org/lesson/265122/step/17?unit=246071
+#Дано натуральное число.
+# Напишите программу, которая определяет, состоит ли указанное число из одинаковых цифр.
+num = int(input())
+digit = num % 10
+flag = True
+for digit_char in str(num):
+    if int(digit_char) == digit:
+        flag = True
+    else:
+        flag = False
+        break
+if flag:
+    print('YES')
+else:
+    print('NO')
+
+#AI
+num = input()
+if all(digit == num[0] for digit in num):
+    print('YES')
+else:
+    print('NO')
+    
+num = input()  # оставляем строкой, не конвертируем в int
+first_digit = num[0]  # берём первую цифру как эталон
+for digit in num:
+    if digit != first_digit:
+        print('NO')
+        break
+else:  # ← выполнится, если цикл не прервался через break
+    print('YES')
+"""""
+#https://stepik.org/lesson/265122/step/18?unit=246071
+#Дано натуральное число.
+# Напишите программу, которая определяет, является ли последовательность
+# его цифр при просмотре справа налево упорядоченной по неубыванию.
+num = int(input())
+last_digit = num % 10
+num //= 10
+while num > 0:
+    digit = num % 10
+    if digit < last_digit:
+        print('NO')
+        break
+    last_digit = digit
+    num //= 10
+else:
+    print('YES')
+
+
