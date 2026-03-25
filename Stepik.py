@@ -1634,7 +1634,7 @@ while num > 0:
     num //= 10
 else:
     print('YES')
-"""""
+
 #https://stepik.org/lesson/265122/step/19?unit=246071
 #На вход программе подаётся натуральное число n.
 # Напишите программу, которая выводит для каждой четной
@@ -1652,3 +1652,113 @@ if count == 1:
 #https://stepik.org/lesson/265122/step/20?unit=246071 Глоссарий
 
 
+#25/03/2026
+#break, continue, else
+num = int(input())
+flag = True
+for i in range(2, num):
+    if num % i == 0:        #  если исходное число делится на какое-либо отличное от 1 и самого себя
+        flag = False
+        break               # останавливаем цикл если встретили делитель числа
+if flag:  # эквивалентно if flag == True:
+    print('Число простое')
+else:
+    print('Число составное')
+
+result = 0
+for i in range(10):
+    num = int(input())
+    if num < 0:
+        break
+    result += num
+print(result)
+
+for i in range(1, 101):
+    if i == 7 or i == 17 or i == 29 or i == 78:
+        continue  # переходим на следующую итерацию
+    print(i)
+
+num = 8673
+while num != 0:
+    last_digit = num % 10
+    num //= 10
+    if 2 <= last_digit <= 6:
+        continue
+    print(last_digit)
+
+for i in range(10):
+    print(i, end='*')
+    if i > 6:
+        break
+
+n = 10
+while n > 0:
+    n -= 1
+    if n == 2:
+        continue
+    print(n, end='*')
+
+mult = 1
+for i in range(1, 11):
+    if i % 2 == 0:
+        continue
+    if i % 9 == 0:
+        break
+    mult *= i
+print(mult)
+
+#https://stepik.org/lesson/298794/step/12?unit=280621
+#На вход программе подаётся число n(n>1).
+# Напишите программу, которая выводит его наименьший отличный от 1 делитель.
+n = int(input())
+for i in range(2, n + 1):
+    if n % i == 0:
+        print(i)
+        break
+
+#https://stepik.org/lesson/298794/step/13?unit=280621
+#На вход программе подаётся натуральное число n.
+# Напишите программу, которая выводит числа от 1 до n включительно за исключением:
+# чисел от 5 до 9 включительно;
+# чисел от 17 до 37 включительно;
+# чисел от 78 до 87 включительно.
+n = int(input())
+for i in range(1, n + 1):
+    if i in range(5,10) or i in range(17,38) or i in range(78,88):
+        continue
+    print(i)
+
+num = 3
+total = 0
+for i in range(num):
+    if i % 2 == i:
+        total += 1
+else:
+    print(total)
+print(total + 1)
+
+num = 4
+while num < 10:
+    num += 2
+    print(num)
+else:
+    print('Цикл завершен.')
+
+num = 7
+while num < 12:
+    num += 2
+    if num == 11:
+        break
+    print(num)
+else:
+    print('Цикл завершен.')
+
+num = 2
+while True:
+    num += 1
+    if num >= 5:
+        break
+    print(num)
+else:
+    print('Цикл завершен.')
+"""""
