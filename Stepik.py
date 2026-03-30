@@ -1945,5 +1945,353 @@ if s != 0: #3
 else:
     print('NO')
 
-"""""
+
 #27/03/2026
+for hours in range(24):
+    for minutes in range(60):
+        for seconds in range(60):
+            print(hours, ':', minutes, ':', seconds)
+
+for i in range(3):
+    for j in range(3):
+        if i == j:
+            break
+        print(i, j)
+
+for i in range(8):
+    for j in range(i + 1):
+        print('*', end='')
+    print()
+
+for i in range(2):
+    for j in range(3):
+        print('C' * i + '+' * j)
+
+for i in range(1, 2):
+    print(i * 'C')
+    for j in range(2, 4):
+        print(j * '♨️')
+    for k in range(3, 1, -1):
+        print(k * '🐳')
+print('#')
+
+for i in range(1, 3):
+    for j in range(1, 3):
+        print(i * '🐍' + j * '🐝')
+    print(i * '🦀')
+
+for i in range(1, 4):
+    for j in range(3, 6):
+        print(i, j)
+
+for i in range(2):
+    print(i, end='*')
+    for j in range(2):
+        print('/', end='+')
+
+for i in range(2):
+    for j in range(2):
+        print('*', end='#')
+    for k in range(3):
+        print('%', end='&')
+    print()
+
+for i in range(1, 4):
+    for j in range(3, 5):
+        print(i + j, end='')
+
+counter = 0
+for i in range(99, 102):
+    temp = i
+    while temp > 0:
+        counter += 1
+        temp //= 10
+print(counter)
+
+#https://stepik.org/lesson/298795/step/10?unit=280622
+#Дано натуральное число n(n≤9).
+# Напишите программу, которая печатает таблицу размером n×3, состоящую из данного числа (числа отделены одним пробелом).
+n = int(input())
+for i in range(n):
+    for k in range(3):
+        print(n, end=' ')
+    print()
+
+#https://stepik.org/lesson/298795/step/11?unit=280622
+#Дано натуральное число n(n≤9).
+# Напишите программу, которая печатает таблицу размером n×5,
+# где в i-ой строке указано число i (числа отделены одним пробелом).
+n = int(input())
+for i in range(1, n+1):
+    for k in range(5):
+        print(i, end=' ')
+    print()
+
+#https://stepik.org/lesson/298795/step/12?unit=280622
+#Дано натуральное число n(n≤9).
+# Напишите программу, которая печатает таблицу сложения для всех чисел от 1 до n(включительно) в соответствии с примером.
+n = int(input())
+for i in range(1, n + 1):
+    for k in range(1, 10):
+        print(i, '+', k, '=', i + k)
+    print()
+
+#https://stepik.org/lesson/298795/step/13?unit=280622
+#Дано натуральное число n.
+# Напишите программу, которая печатает численный треугольник в соответствии с примером:
+n = int(input())
+for m in range(1, n+1):
+    for k in range(m,m+1):
+        print(str(k) * k, end='\n')
+
+n = int(input())
+for i in range(n):
+    for j in range(i + 1):
+        print(i + 1, end="")
+    print()
+
+#https://stepik.org/lesson/298795/step/14?unit=280622
+#Дано нечётное натуральное число n.
+# Напишите программу, которая печатает равнобедренный звёздный треугольник с основанием, равным n, в соответствии с примером:
+n = int(input())
+for i in range(1, n+1):
+        if i <= (n+1)/2:
+            for j in range(i):
+                print('*', end="")
+            print()
+        else:
+            for g in range((n+1)-i):
+                print('*', end="")
+            print()
+            
+#Stepik
+n = int(input())
+for i in range(n):
+    cur_cnt = (n // 2 + 1) - abs(n // 2 - i)
+    for j in range(cur_cnt):
+        print("*", end="")
+    print()
+
+
+#30/03/2026
+total = 0
+for x in range(1, 65):
+    for y in range(1, 60):
+        if 12 * x + 13 * y == 777:
+            total += 1
+            print('x =', x, 'y =', y)
+print('Общее количество натуральных решений =', total)
+
+total = 0
+for x in range(1, 45):
+    for y in range(1, 45):
+        for z in range(1, 45):
+            if x ** 2 + y ** 2 + z ** 2 == 2020:
+                total += 1
+                print('x =', x, 'y =', y, 'z =', z)
+print('Общее количество натуральных решений =', total)
+
+#https://stepik.org/lesson/298795/step/16?unit=280622
+#Решите уравнение в натуральных числах 28n+30k+31m=365
+total = 0
+for n in range(1, 14):
+    for k in range(1, 13):
+        for m in range(1, 12):
+            if 28 * n + 30 * k + 31 * m == 365:
+                total += 1
+                print('n =', n, 'k =', k, 'm =', m)
+print('Общее количество натуральных решений =', total)
+
+#https://stepik.org/lesson/298795/step/17?unit=280622
+#Сколько быков, коров и телят можно купить ровно на 100 рублей, если
+# плата за быка – 10 рублей,
+# за корову – 5 рублей,
+# за телёнка – 0.5 рубля и надо купить
+# 100 голов скота?
+total = 0
+for b in range(1, 10):
+    for k in range(1, 20):
+        for t in range(1, 200):
+            if 10 * b + 5 * k + 0.5 * t == 100 and b + k + t == 100:
+                total += 1
+                print('b =', b, 'k =', k, 't =', t)
+print('Общее количество натуральных решений =', total)
+
+#Гипотеза Эйлера о сумме степеней
+total = 0
+for a in range(1, 150):
+    for b in range(1, 150):
+        for c in range(1, 150):
+            for d in range(1, 150):
+                for e in range(1, 150):
+                    if a ** 5 + b ** 5 + c ** 5 + d ** 5 == e ** 5:
+                        total += 1
+                        print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'e =', e)
+                        print(a + b + c + d + e)
+print('Общее количество натуральных решений =', total)
+
+total = 0
+for a in range(1, 150):
+    for b in range(1, 150):
+        for c in range(1, 150):
+            for d in range(1, 150):
+                # Вычисляем левую часть один раз
+                left_sum = a**5 + b**5 + c**5 + d**5
+                for e in range(1, 150):
+                    if left_sum == e**5:
+                        total += 1
+                        print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'e =', e)
+                        print(a + b + c + d + e)
+print('Общее количество натуральных решений =', total)
+
+total = 0
+max_val = 149
+# Используем a <= b <= c <= d, чтобы не проверять перестановки
+for a in range(1, max_val + 1):
+    for b in range(a, max_val + 1):  # b начинается с a
+        for c in range(b, max_val + 1):  # c начинается с b
+            for d in range(c, max_val + 1):  # d начинается с c
+                left_sum = a ** 5 + b ** 5 + c ** 5 + d ** 5
+                if left_sum > max_val ** 5:
+                    continue
+                for e in range(1, max_val + 1):
+                    if left_sum == e ** 5:
+                        total += 1
+                        print(f'a={a}, b={b}, c={c}, d={d}, e={e}')
+                        print(f'Сумма = {a + b + c + d + e}')
+print('Общее количество натуральных решений =', total)
+
+total = 0
+max_val = 149
+
+# Предвычисляем степени
+powers = [0] * (max_val + 1)
+for i in range(1, max_val + 1):
+    powers[i] = i ** 5
+
+# Используем симметрию и ограничения
+for a in range(1, max_val + 1):
+    for b in range(a, max_val + 1):
+        for c in range(b, max_val + 1):
+            for d in range(c, max_val + 1):
+                left_sum = powers[a] + powers[b] + powers[c] + powers[d]
+
+                # Если сумма больше максимальной степени, дальше можно не искать
+                if left_sum > powers[max_val]:
+                    continue
+
+                # Ищем e (можно использовать while или просто проверить все)
+                for e in range(1, max_val + 1):
+                    if left_sum == powers[e]:
+                        total += 1
+                        print(f'a={a}, b={b}, c={c}, d={d}, e={e}')
+                        print(f'Сумма = {a + b + c + d + e}')
+                        break  # нашли, дальше не ищем
+
+print(f'Общее количество натуральных решений = {total}')
+
+total = 0
+max_val = 149
+# Предвычисляем степени
+powers = [0] * (max_val + 1)
+for i in range(1, max_val + 1):
+    powers[i] = i ** 5
+sums_list = []  # Список для хранения всех сумм
+for a in range(1, max_val + 1):
+    for b in range(a, max_val + 1):
+        for c in range(b, max_val + 1):
+            for d in range(c, max_val + 1):
+                left_sum = powers[a] + powers[b] + powers[c] + powers[d]
+                if left_sum > powers[max_val]:
+                    continue
+                for e in range(1, max_val + 1):
+                    if left_sum == powers[e]:
+                        total += 1
+                        numbers_sum = a + b + c + d + e
+                        sums_list.append(numbers_sum)
+                        print(f'Решение #{total}: ({a}, {b}, {c}, {d}, {e})')
+                        print(f'Сумма = {numbers_sum}')
+                        print('-' * 40)
+                        break
+print(f'\nОбщее количество решений = {total}')
+if sums_list:
+    print(f'Минимальная сумма = {min(sums_list)}')
+    print(f'Максимальная сумма = {max(sums_list)}')
+    print(f'Средняя сумма = {sum(sums_list) / len(sums_list):.2f}')
+
+#https://stepik.org/lesson/298796/step/1?unit=280623
+#На вход программе подаётся натуральное число n.
+# Напишите программу, выводящую графическое изображение делимости чисел от 1 до n включительно.
+# В каждой строке надо напечатать очередное число и столько символов +, сколько делителей у этого числа.
+n = int(input())
+count = 0
+for i in range(1, n + 1):
+    print(i,end='')
+    for j in range(1, i + 1):
+        if i % j == 0:
+            print('+', end='')
+    print()
+
+#https://stepik.org/lesson/298796/step/2?unit=280623
+#Дано натуральное число n.
+# Напишите программу, которая печатает численный треугольник с высотой, равной n, в соответствии с примером:
+n = int(input())
+num = 1
+for i in range(1, n+1):
+    for j in range(1, i+1):
+        print(num,sep=' ',end=' ')
+        num += 1
+    print()
+
+#https://stepik.org/lesson/298796/step/3?unit=280623
+#На вход программе подается два натуральных числа a и b(a<b)
+# Напишите программу, которая находит все простые числа от a до b включительно
+a, b = int(input()), int(input())
+for i in range(a, b+1):
+    if i == 1:
+        continue
+    is_prime = True
+    for j in range(2, i):
+        if i % j == 0:
+            is_prime = False
+            break
+    if is_prime:
+        print(i)
+
+#https://stepik.org/lesson/298796/step/4?unit=280623
+#Дано натуральное число n.
+# Напишите программу, которая выводит значение суммы
+n = int(input())
+factorial = 1
+s = 0
+for i in range(1, n+1):
+    factorial *= i
+    s += factorial
+print(s)
+
+n = int(input())
+s = 0
+for i in range(1, n+1):
+    factorial = 1
+    for j in range(1, i+1):
+        factorial *= j
+    s += factorial
+print(s)
+
+#https://stepik.org/lesson/298796/step/5?unit=280623
+#На вход программе подаются натуральные числа n и m.
+# Под эмодзи 🍌, 💎, 🦌 спрятаны целые числа от 1 до n (не включительно).
+# Имеется следующий ребус
+n, m = int(input()), int(input())
+flag = True
+for a in range(1, n):
+    for b in range(1, n):
+        for c in range(1, n):
+            if a + b * 3 + c * 2 == m:
+                print(a, ' + 3×',b, ' + 2×',c, ' = ', m, sep='')
+                flag = False
+if flag:
+    print('При заданных n и m решений не существует.')
+"""""
+#https://stepik.org/lesson/298796/step/6?unit=280623
+a, b = int(input()), int(input())
