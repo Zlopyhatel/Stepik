@@ -2292,6 +2292,92 @@ for a in range(1, n):
                 flag = False
 if flag:
     print('При заданных n и m решений не существует.')
-"""""
-#https://stepik.org/lesson/298796/step/6?unit=280623
+
+
+#31/03/2026
+
+# #https://stepik.org/lesson/298796/step/6?unit=280623
 a, b = int(input()), int(input())
+max_sum = 0
+max_dividend = 0
+for i in range(a, b+1):
+    sum_divider = 0
+    for j in range(1, i+1):
+        if i % j == 0:
+            sum_divider += j
+            #print('i =', i, 'j =', j, sum_divider)
+    if sum_divider >= max_sum:
+        max_dividend = i
+        max_sum = sum_divider
+print(max_dividend, max_sum)
+
+#https://stepik.org/lesson/298796/step/7?unit=280623
+#Дано натуральное число n.
+# Напишите программу, которая печатает численный треугольник с высотой, равной n, в соответствии с примером
+n = int(input())
+for i in range(1, n+1):
+    for j in range(1, i+1):
+        print(j,end='')
+    for g in range(i-1, 0, -1):
+        print(g,end='')
+    print()
+
+#https://stepik.org/lesson/298796/step/8?unit=280623
+#На вход программе подаётся натуральное число n.
+# Найдите все моменты времени, для которых выполняется данная формула,
+# и выведите их в порядке возрастания в формате hh:mm, каждый на отдельной строке.
+# Программа должна вывести в формате hh:mm все моменты времени в соответствии с условием задачи.
+n = int(input())
+for hours in range(0, 24):
+    for minutes in range(0, 60):
+        if hours ** n == minutes:
+            print(f"{hours:02d}:{minutes:02d}")
+#Stepik
+n = int(input())
+for h in range(24):
+    for m in range(60):
+        if h**n == m:
+            if h < 10:
+                h = '0' + str(h)
+            if m < 10:
+                m = '0' + str(m)
+            print(h, m, sep=':')
+            h, m = int(h), int(m)
+
+#https://stepik.org/lesson/298796/step/9?unit=280623
+#Цифровым корнем числа n называется число, получающееся следующим образом:
+# вычисляется сумма цифр числа n, затем сумма цифр у получившегося числа и так далее,
+# пока не получится однозначное число. Например, цифровой корень числа 9875 равен 2:
+n = int(input())
+if n < 10:
+    print(n)
+else:
+    while n >= 10:
+        current_number = 0
+        while n:
+            current_digit = n % 10
+            n //= 10
+            current_number += current_digit
+        n = current_number
+    print(current_number)
+
+n = int(input())
+#Stepik
+while n > 9:
+    new_n = 0
+    while n > 0:
+        new_n += n % 10
+        n //= 10
+    n = new_n
+print(n)
+"""""
+#01/04/2026
+#Factorial
+n = int(input())
+res = 1
+i = 2
+while i <= n:
+    res *= i
+    i += 1
+print(res)
+
