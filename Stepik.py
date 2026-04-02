@@ -2370,8 +2370,11 @@ while n > 9:
         n //= 10
     n = new_n
 print(n)
-"""""
+
+
 #01/04/2026
+#Exam
+
 #Factorial
 n = int(input())
 res = 1
@@ -2381,3 +2384,313 @@ while i <= n:
     i += 1
 print(res)
 
+#выводит минимальный делитель числа, отличный от единицы - почему?
+n = int(input())
+i = 2
+while n % i != 0:
+    i += 1
+print(i)
+
+#https://stepik.org/lesson/294080/step/1?unit=275759
+#На обработку поступает натуральное число.
+# Нужно написать программу, которая выводит на экран сумму чётных цифр этого числа или 0, если чётных цифр в записи нет.
+# Программист торопился и написал программу неправильно.
+# Найдите все ошибки в этой программе (их может быть одна или несколько).
+# Известно, что каждая ошибка затрагивает только одну строку и может быть исправлена без изменения других строк.
+n = int(input())
+s = 0
+while n:
+    if (n % 10) % 2 == 0:
+        s += n % 10
+    n//= 10
+print(s)
+
+#https://stepik.org/lesson/294080/step/2?unit=275759
+n = 8
+count = 0
+maximum = -1000000000000
+for i in range(1, n + 1):
+    x = int(input())
+    if x % 4 == 0:
+        count += 1
+        if x > maximum:
+            maximum = x
+if count > 0:
+    print(count)
+    print(maximum)
+else:
+    print('NO')
+
+#https://stepik.org/lesson/294080/step/3?unit=275759
+n = 4
+count = 0
+maximum = -100000000
+for i in range(1, n + 1):
+    x = int(input())
+    if x % 2 != 0:
+        count += 1
+        if x > maximum:
+            maximum = x
+if count > 0:
+    print(count)
+    print(maximum)
+else:
+    print('NO')
+
+#https://stepik.org/lesson/294080/step/4?unit=275759
+#На вход программе подаётся натуральное число n(3≤n≤19).
+# Напишите программу, которая печатает звёздную рамку размерами n×19.
+n = int(input())
+for i in range(1, n+1):
+    if i==1 or i== n:
+        print('*******************')
+    else:
+        print('*                 *')
+#Stepik
+n = int(input())
+for i in range(n):
+    if i == 0 or i == n - 1:
+        cur_sep = "*"
+    else:
+        cur_sep = " "
+    print("*", "*", sep=cur_sep * 17)
+
+#https://stepik.org/lesson/294080/step/5?unit=275759
+#Дано натуральное число n(n>99).
+# Напишите программу, которая определяет его третью (с начала) цифру.
+n = int(input())
+num = 0
+while len(str(n)) > 3:
+    n //= 10
+    print(n)
+num = n % 10
+print(num)
+
+#https://stepik.org/lesson/294080/step/6?unit=275759
+#Дано натуральное число. Напишите программу, которая вычисляет:
+# количество цифр 3 в нём;
+# сколько раз в нём встречается последняя цифра;
+# количество чётных цифр;
+# сумму его цифр, больших пяти;
+# произведение цифр, больших семи (если цифр больших семи нет, то вывести 1, если такая цифра одна, то вывести её);
+# сколько раз в нём встречаются цифры 0 и 5 (всего суммарно).
+n = int(input())
+three = 0
+ln = n % 10
+last_number = 0
+even = 0
+bigger_five = 0
+bigger_seven = 1
+zero_five = 0
+while n:
+    current_number = n % 10
+    if current_number == 3: # количество цифр 3 в нём;
+        three += 1
+    if current_number % 2 == 0: # количество чётных цифр;
+        even += 1
+    if current_number > 5: # сумму его цифр, больших пяти;
+        bigger_five += current_number
+    if current_number > 7: # произведение цифр, больших семи (если цифр больших семи нет, то вывести 1, если такая цифра одна, то вывести её);
+        bigger_seven *= current_number
+        last_bigger_seven = current_number
+    if current_number == 0 or current_number == 5: # сколько раз в нём встречаются цифры 0 и 5 (всего суммарно).
+        zero_five += 1
+    n //= 10
+    if current_number == ln: # сколько раз в нём встречается последняя цифра;
+        last_number += 1
+print(three)
+print(last_number)
+print(even)
+print(bigger_five)
+print(bigger_seven)
+print(zero_five)
+
+#https://stepik.org/lesson/294080/step/7?unit=275759
+
+#AI
+def find_taxi_numbers(n):
+    found = []
+    num = 1
+    while len(found) < n:
+        ways = []
+        limit = int(num ** (1 / 3)) + 1
+        for a in range(1, limit):
+            for b in range(a, limit):
+                if a ** 3 + b ** 3 == num:
+                    ways.append((a, b))
+        if len(ways) >= 2:
+            found.append(num)
+            print(f"{len(found)}. {num}")
+            for a, b in ways:
+                print(f"   {a}³ + {b}³")
+        num += 1
+    return found
+# Находим первые 5 чисел
+result = find_taxi_numbers(5)
+print("\nПервые 5 чисел Рамануджана:")
+print(result)
+
+for a in range(1, 43):
+    for b in range(1, 43):
+        for c in range(1, 43):
+            for d in range(1, 43):
+                if a != b and b != c and c != d and a!=c and a!=d and pow(a, 3) + pow(b, 3) == pow(c, 3) + pow(d, 3):
+                    print(pow(a, 3) + pow(b, 3))
+
+
+#02/04/2026
+s = 'All you need is love'
+if 'love' in s:
+    print('❤️')
+else:
+    print('💔')
+
+s = 'abcdef'
+for i in range(len(s)):
+    print(s[i])
+
+s = 'abcdef'
+for c in s:
+    print(c)
+
+s = '01234567891011121314151617'
+for i in range(0, len(s), 5):
+    print(s[i], end='')
+#https://stepik.org/lesson/284101/step/5?unit=265440
+#https://stepik.org/lesson/284101/step/6?unit=265440
+s = "In 2010, someone paid 10k Bitcoin for two pizzas."
+print(s[7],s[-10])
+
+#https://stepik.org/lesson/284101/step/7?unit=265440
+#На вход программе подаётся одна строка. 
+#Напишите программу, которая выводит элементы строки с чётными индексами
+s = input()
+for i in range(0, len(s), 2):
+    print(s[i])
+
+#https://stepik.org/lesson/284101/step/8?unit=265440
+#На вход программе подаётся одна строка.
+# Напишите программу, которая выводит в столбик элементы строки в обратном порядке.
+s = input()
+for i in range(-1, -len(s)-1, -1):
+    print(s[i])
+
+#https://stepik.org/lesson/284101/step/9?unit=265440
+#На вход программе подаются три строки: имя, фамилия и отчество (именно в таком порядке).
+# Напишите программу, которая выводит инициалы человека.
+#res = ''
+s1, s2, s3 = input(), input(), input()
+#res = s2[0] + s1[0] + s3[0]
+print(s2[0] + s1[0] + s3[0])
+#Stepik
+a, b, c = input()[0], input()[0], input()[0]
+print(b, a, c, sep="")
+
+#https://stepik.org/lesson/284101/step/10?unit=265440
+#Персонажи мультфильма «Мадагаскар» планируют побег из Африки.
+# Они выстроились в очередь на самолёт, построенный шимпанзе.
+# На вход программе подаётся строка из эмодзи-символов – очередь животных на борт самолёта.
+# Для каждого животного из очереди вам необходимо вывести его эмодзи и номер в очереди (начиная с 1) в следующем формате:
+s = input()
+counter = 1
+for i in range(0, len(s)):
+    print(counter,') ', s[i], sep="")
+    counter += 1
+#Stepik
+queue = input()
+for i in range(len(queue)):
+    print(i + 1, ') ', queue[i], sep='')
+
+#https://stepik.org/lesson/284101/step/11?unit=265440
+#На вход программе подаётся одна строка состоящая из цифр.
+# Напишите программу, которая считает сумму цифр данной строки.
+s = input()
+summa = 0
+for i in range(len(s)):
+    summa += int(s[i])
+print(summa)
+
+#https://stepik.org/lesson/284101/step/12?unit=265440
+#На вход программе подаётся одна строка.
+# Напишите программу, которая выводит сообщение «Цифра» (без кавычек), если строка содержит цифру.
+# В противном случае вывести сообщение «Цифр нет» (без кавычек).
+s = input()
+has_digit = False
+for digit in '0123456789':
+    if digit in s:
+        has_digit = True
+        break
+if has_digit:
+    print('Цифра')
+else:
+    print('Цифр нет')
+#Stepik
+for i in input():
+    if i in '01234567890':
+        print("Цифра")
+        break
+else:
+    print("Цифр нет")
+
+#https://stepik.org/lesson/284101/step/13?unit=265440
+#На вход программе подаётся одна строка.
+# Напишите программу, которая определяет, сколько раз в строке встречаются символы + и *, и выводит текст в следующем формате:
+plus = 0
+star = 0
+for i in input():
+    if '+' in i:
+        plus += 1
+    if '*' in i:
+        star += 1
+print(f'Символ + встречается {plus} раз')
+print(f'Символ * встречается {star} раз')
+
+n = input()
+print("Символ + встречается", n.count("+"), "раз")
+print("Символ * встречается", n.count("*"), "раз")
+
+#https://stepik.org/lesson/284101/step/14?unit=265440
+#На вход программе подаётся одна строка.
+# Напишите программу, которая определяет, сколько в ней пар одинаковых соседних символов.
+#AI 50/50
+s = input()
+pairs = 0
+for i in range(len(s)-1):
+    if s[i] == s[i + 1]:
+        pairs += 1
+print(pairs)
+
+#https://stepik.org/lesson/284101/step/15?unit=265440
+#На вход программе подаётся одна строка с буквами русского языка.
+# Напишите программу, которая определяет количество гласных и согласных букв и выводит текст в следующем формате:
+s = input()
+glas = 0
+soglas = 0
+for i in s:
+    i = i.lower()
+    if i in 'ауоыиэяюе':
+        glas += 1
+    if i in 'бвгджзйклмнпрстфхцчшщ':
+        soglas +=1
+print(f'Количество гласных букв равно {glas}')
+print(f'Количество согласных букв равно {soglas}')
+
+#https://stepik.org/lesson/284101/step/16?unit=265440
+#На вход программе подаётся натуральное число, записанное в десятичной системе счисления.
+# Напишите программу, которая переводит данное число в двоичную систему счисления.
+n = int(input())
+s = ''
+while n:
+    current_number = n % 2
+    n = n // 2
+    s += str(current_number)
+for i in range(-1, -len(s)-1, -1):
+    print(s[i],end='')
+
+n = int(input())
+res = ""
+while n > 0:
+    res = str(n % 2) + res
+    n //= 2
+print(res)
+"""""
