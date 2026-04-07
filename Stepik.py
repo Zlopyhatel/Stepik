@@ -2846,4 +2846,215 @@ print(cnt_al_lower)
 #✅ Метод lower() возвращает копию строки s, в которой все символы имеют нижний регистр.
 #✅ Метод upper() возвращает копию строки s, в которой все символы имеют верхний регистр.
 #✅ Строковые методы не изменяют исходную строку: вместо этого они возвращают новую строку.
+
+
+#07/04/2026
+
+#Методы count()
+#Метод startswith() startswith(<prefix>, <start>, <end>)
+#Метод endswith()
+#Метод find()
+#Метод rfind()
+#Метод index()
+#Метод rindex()
+#Метод strip()
+#Метод lstrip()
+#Метод rstrip()
+#Метод replace()
+
+s = 'foo goo moo'
+print(s.count('oo')) #3
+print(s.count('oo', 0, 8))  # подсчет с 0 по 7 символ #2
+
+s = 'foobar'
+print(s.startswith('foo')) #True
+print(s.startswith('baz')) #False
+
+s = 'foobar'
+print(s.endswith('bar'))    #True
+print(s.endswith('baz'))    #False
+
+s = 'foo bar foo baz foo qux'
+print(s.find('foo'))    #0
+print(s.find('bar'))    #4
+print(s.find('qu'))     #20
+print(s.find('python')) #-1
+
+s = '     foo bar foo baz foo qux      '    #foo bar foo baz foo qux
+print(s.strip())
+
+s = '     foo bar foo baz foo qux      '
+print(s.lstrip())                           #foo bar foo baz foo qux⎵⎵⎵⎵⎵⎵
+
+s = 'foo bar foo baz foo qux'
+print(s.replace('foo', 'grault'))   #grault bar grault baz grault qux
+
+s = 'foo bar foo baz foo qux'
+print(s.replace('foo', 'grault', 2))    #grault bar grault baz foo qux
+
+s = '-+-+abc+-+-'
+print(s.strip('+-'))    #abc
+print(s.rstrip('+-'))   #-+-+abc
+print(s.lstrip('+-'))   #abc+-+-
+
+s = 'https://pygen.ru'
+print(s.endswith('.ru') == True)
+s = 'https://pygen.ru'
+print(s.endswith('.ru'))
+
+s = 'aabbAAccDDaa'
+s = s.lower()
+print(s.count('a')) #6
+
+s = 'www.stepik.org'
+print(s.startswith('www')) #True
+
+s = 'www.stepik.org'
+print(s.endswith('.ru')) #False
+
+s = 'I learn Python language. Python - awesome!'
+print(s.find('Python')) #8
+
+s = '     I learn Python language               '
+print(s.strip())
+
+s = 'abcdababa'
+print(s.replace('ab', '123'))
+
+#https://stepik.org/lesson/303083/step/8?unit=284990
+#На вход программе подаётся строка текста, состоящая из слов, разделённых ровно одним пробелом.
+# Напишите программу, которая подсчитывает количество слов в ней.
+
+s = input()
+print(s.count(' ')+ 1)
+
+#https://stepik.org/lesson/303083/step/9?unit=284990
+#На вход программе подаётся строка генетического кода, состоящая из букв А (аденин), Г (гуанин), Ц (цитозин) и Т (тимин).
+# Напишите программу, которая подсчитывает сколько аденина,
+# гуанина, цитозина и тимина входит в данную строку генетического кода.
+s = input()
+a = s.count('а')
+a1 = s.count('А')
+print('Аденин:', a + a1)
+g = s.count('Г')
+g1 = s.count('г')
+print('Гуанин:', g + g1)
+c = s.count('Ц')
+c1 = s.count('ц')
+print('Цитозин:', c + c1)
+t = s.count('Т')
+t1 = s.count('т')
+print('Тимин:', t + t1)
+
+#Stepik
+genetic_code = input().upper()            # Ввод строки генетического кода
+adenine_count = genetic_code.count("А")   # Подсчет количества аденина
+guanine_count = genetic_code.count("Г")   # Подсчет количества гуанина
+cytosine_count = genetic_code.count("Ц")  # Подсчет количества цитозина
+thymine_count = genetic_code.count("Т")   # Подсчет количества тимина
+
+# Вывод результатов
+print("Аденин:", adenine_count)
+print("Гуанин:", guanine_count)
+print("Цитозин:", cytosine_count)
+print("Тимин:", thymine_count)
+
+#https://stepik.org/lesson/303083/step/10?unit=284990
+#Джим Хоппер с помощью радиоприёмника пытается получить сообщение Оди.
+# На приёмник ему поступает n различных последовательностей кода Морзе.
+# Декодировав их, он получает последовательности из цифр и букв строчного латинского алфавита.
+# При этом только в сообщениях Оди содержится число 11, причём минимум 3 раза.
+# Помогите определить Джиму количество сообщений от Оди.
+n = int(input())
+messages = 0
+for _ in range(n):
+    counter = 0
+    s = input()
+    counter += s.count('11')
+    if counter >= 3:
+        messages += 1
+print(messages)
+
+#Stepik
+n = int(input())
+cnt = 0
+for _ in range(n):
+    message = input()
+    if message.count("11") >= 3:
+        cnt += 1
+print(cnt)
+
+#https://stepik.org/lesson/303083/step/11?unit=284990
+#На вход программе подаётся строка текста.
+# Напишите программу, которая подсчитывает количество цифр в данной строке.
+s = input()
+s_without_digits = s
+for digit in '0123456789':
+    s_without_digits = s_without_digits.replace(digit, '')
+print(len(s) - len(s_without_digits))
+
+#Stepik
+text = input()
+cnt = 0
+for i in range(10):
+    cnt += text.count(str(i))
+print(cnt)
+
+#https://stepik.org/lesson/303083/step/12?unit=284990
+#На вход программе подаётся строка текста.
+# Напишите программу, которая проверяет, что строка заканчивается подстрокой .com или .ru.
+s = input()
+if s.endswith('.ru') or s.endswith('.com'):
+    print('YES')
+else:
+    print('NO')
+
+#https://stepik.org/lesson/303083/step/13?unit=284990
+#На вход программе подаётся строка текста.
+# Напишите программу, которая выводит на экран символ, который появляется наиболее часто.
+s = input()
+m = 0
+l = ''
+for i in s:
+    count = 0
+    count += s.count(i)
+    if count >= m:
+        m = count
+        l = i
+print(l)
+#Stepik
+s = input()
+most_common = s[0]
+for el in s:
+    if s.count(el) >= s.count(most_common):
+        most_common = el
+print(most_common)
+
+#https://stepik.org/lesson/303083/step/14?unit=284990
+#На вход программе подаётся строка текста.
+# Если в этой строке буква «f» встречается только один раз, выведите её индекс.
+# Если она встречается два и более раза, выведите индексы её первого и последнего вхождения на одной строке,
+# разделённые символом пробела.
+# Если буква «f» в данной строке не встречается, следует вывести «NO» (без кавычек).
+s = input()
+if s.find('f') == -1:
+    print('NO')
+elif s.find('f') == s.rfind('f'):
+    print(s.find('f'))
+else:
+    print(s.find('f'), s.rfind('f'))
+
+#https://stepik.org/lesson/303083/step/15?unit=284990
+#На вход программе подаётся строка текста, в которой буква «h» встречается минимум два раза.
+# Напишите программу, которая удаляет из этой строки первое и последнее вхождение буквы «h»,
+# а также все символы, находящиеся между ними.
+s = input()
+f = s.find('h')
+l = s.rfind('h')
+if f == l == -1:
+    print(s)
+else:
+    print(s[:f]+s[(l+1):])
+
 """""
+#08/04/2026
