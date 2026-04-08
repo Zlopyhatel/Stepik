@@ -3056,5 +3056,150 @@ if f == l == -1:
 else:
     print(s[:f]+s[(l+1):])
 
-"""""
+
 #08/04/2026
+
+s1 = 'abc123'
+s2 = 'abc$*123'
+s3 = ''
+print(s1.isalnum()) #True
+print(s2.isalnum()) #False
+print(s3.isalnum()) #False
+
+s1 = 'BEEGEEK'
+s2 = '2202'
+print(s1.isalnum()) #True
+print(s2.isalnum()) #True
+
+s1 = 'ABCabc'
+s2 = 'abc123'
+s3 = ''
+print(s1.isalpha()) #True
+print(s2.isalpha()) #False
+print(s3.isalpha()) #False
+
+s1 = '1234567'
+s2 = 'abc123'
+s3 = ''
+print(s1.isdigit()) #True
+print(s2.isdigit()) #False
+print(s3.isdigit()) #False
+
+s1 = 'abc'
+s2 = 'abc1$d'
+s3 = 'Abc1$D'
+print(s1.islower()) #True
+print(s2.islower()) #True
+print(s3.islower()) #False
+
+print('1234'.islower()) #False
+print('+-*/'.islower()) #False
+print('ab#%'.islower()) #True
+
+s1 = 'ABC'
+s2 = 'ABC1$D'
+s3 = 'Abc1$D'
+print(s1.isupper()) #True
+print(s2.isupper()) #True
+print(s3.isupper()) #False
+
+print('5678'.isupper()) #False
+print('!?_&'.isupper()) #False
+print('AB%$'.isupper()) #True
+
+s1 = '       '
+s2 = 'abc1$d'
+print(s1.isspace()) #True
+print(s2.isspace()) #False
+
+s1 = ''
+print(s1.isspace()) #False
+
+print('Cyberpunk 2077'.isalnum())   #False
+
+#https://stepik.org/lesson/303084/step/9?unit=284991
+n = int(input())
+for i in range(1,n+1):
+    s = input()
+    if s == '' or s.isspace():
+        print(f'{i}: COMMENT SHOULD BE DELETED')
+    else:
+        print(f'{i}: {s}')
+
+#https://stepik.org/lesson/303084/step/10?unit=284991
+s = input()
+if s.startswith('@') and 5 <= len(s) <= 15:
+    if s[1:].isdigit():
+        print('Correct')
+    elif (s[1:].isalnum() or s[1:].isalpha()) and s.islower():
+        print('Correct')
+    else:
+        print('Incorrect')
+else:
+    print('Incorrect')
+#Stepik
+s = input()
+if (
+    s.startswith('@')
+    and 5 <= len(s) <= 15
+    and s[1:].isalnum()
+    and s == s.lower()
+):
+    print('Correct')
+else:
+    print('Incorrect')
+
+#https://stepik.org/lesson/303084/step/11?unit=284991
+#AI
+s = input()
+d = 'АВЕКМНОРСТУХ'
+if len(s) == 9:
+    # Формат: БЦЦЦББ_ЦЦ
+    if (s[0] in d and
+        s[1].isdigit() and
+        s[2].isdigit() and
+        s[3].isdigit() and
+        s[4] in d and
+        s[5] in d and
+        s[6] == '_' and
+        s[7].isdigit() and
+        s[8].isdigit()):
+        print('YES')
+    else:
+        print('NO')
+elif len(s) == 10:
+    # Формат: БЦЦЦББ_ЦЦЦ
+    if (s[0] in d and
+        s[1].isdigit() and
+        s[2].isdigit() and
+        s[3].isdigit() and
+        s[4] in d and
+        s[5] in d and
+        s[6] == '_' and
+        s[7].isdigit() and
+        s[8].isdigit() and
+        s[9].isdigit()):
+        print('YES')
+    else:
+        print('NO')
+else:
+    print('NO')
+
+#Stepik
+s = input()
+flag = 'NO'
+correct_letters = 'АВЕКМНОРСТУХ'
+if 9 <= len(s) <= 10:
+    letters = s[0] + s[4:6]
+    digits = s[1:4] + s[7:]
+    underscore = s[6]
+    if digits.isdigit() and underscore == '_':
+        flag = 'YES'
+    for c in letters:
+        if c not in correct_letters:
+            flag = 'NO'
+            break
+print(flag)
+
+"""""
+#09/04/2026
